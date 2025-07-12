@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F-16 Fighting Falcon - AeroExplorer</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: Arial, sans-serif;
+      color: #f0f0f0;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00bfff;
+      text-shadow: 2px 2px 4px #000;
+    }
+    h2 {
+      font-size: 1.8rem;
+      color: #00bfff;
+      border-bottom: 1px solid #00bfff;
+      padding-bottom: 0.3rem;
+    }
+    p {
+      background: rgba(0,0,0,0.5);
+      padding: 0.8rem;
+      border-radius: 8px;
+      line-height: 1.6;
+    }
+    img {
+      display:block;
+      max-width: 100%;
+      margin: 1rem auto;
+      cursor: pointer;
+      border: 3px solid #fff;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    img:hover {
+      transform: scale(1.02);
+    }
+    a {
+      display: block;
+      text-align: center;
+      color:#00bfff;
+      margin-top: 2rem;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>F-16 Fighting Falcon</h1>
+  <img src="https://tse3.mm.bing.net/th/id/OIP.zWaWeD4WiwUXs-ec3FWLAAHaEJ?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="F-16 Fighter Jet" onclick="alert('F-16: Agile and deadly!')">
+  
+  <h2>Overview</h2>
+  <p>The F-16 Fighting Falcon is a compact, multi-role fighter aircraft that has been a key part of air forces worldwide since 1978. Known for its agility and versatility, it remains a top choice for aerial combat and defense missions.</p>
+
+  <h2>Specifications</h2>
+  <p>🛫 Manufacturer: Lockheed Martin<br>
+     ⚡ Max Speed: 1,500 mph<br>
+     🌍 Range: 2,620 miles<br>
+     👨‍✈️ Crew: 1<br>
+     🔫 Armament: 20mm cannon + air-to-air/air-to-ground missiles</p>
+
+  <h2>Mission Steps</h2>
+  <p>Pre-flight check → Arm weapons → Taxi to runway → Takeoff → Engage target → Return to base</p>
+
+  <a href="catalog.html">← Back to Catalog</a>
+
+  <script>
+    document.addEventListener('keydown', e => {
+      if (e.key.toLowerCase() === 'c') window.location.href = 'catalog.html';
+    });
+  </script>
+</body>
+</html>

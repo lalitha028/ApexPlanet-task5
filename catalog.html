@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AeroExplorer - Catalog</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://png.pngtree.com/thumb_back/fw800/background/20230512/pngtree-airplane-flying-in-the-clouds-image_2501564.jpg') no-repeat center center / cover;
+      color: white;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1rem;
+      text-align: center;
+    }
+    main {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 5rem;
+      padding: 2rem;
+      
+    }
+    .card {
+      background: rgba(255,255,255,0.85);
+      border-radius: 8px;
+      overflow: hidden;
+      color: #000;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .card div {
+      padding: 0.5rem;
+      text-align: center;
+    }
+     a {
+      color: black;
+      display: block;
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      text-decoration: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Aircraft Catalog</h1>
+  </header>
+  <main id="catalog"></main>
+<a href="quiz.html">📝 Take the Aero Quiz</a>
+  <script>
+    const aircrafts = [
+      {name:"Boeing 747", type:"Passenger", image:"https://static1.simpleflyingimages.com/wordpress/wp-content/uploads/2024/06/korean-air-747-8-landing-shutterstock_698985949-1.jpg", page:"boeing.html"},
+      {name:"Airbus A380", type:"Passenger", image:"https://www.aircraft-info.net/wp-content/uploads/2014/05/airbus-a380-on-ramp.jpg", page:"airbusa380.html"},
+      {name:"F-16", type:"Fighter Jet", image:"https://tse3.mm.bing.net/th/id/OIP.zWaWeD4WiwUXs-ec3FWLAAHaEJ?r=0&rs=1&pid=ImgDetMain&o=7&rm=3", page:"f16.html"},
+      {name:"C-130 Hercules", type:"Cargo", image:"https://media.defense.gov/2016/Jun/22/2001931574/2000/2000/0/160617-F-QN515-024.JPG", page:"c130.html"},
+      {name:"AH-64 Apache", type:"Helicopter", image:"https://www.planephotos.net/photos/22782_Boeing-AH-64D-Apache-Longbow_07-07037.jpg", page:"ah64apache.html"}
+    ];
+
+    const catalog = document.getElementById("catalog");
+    aircrafts.forEach(ac => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${ac.image}" alt="${ac.name}">
+        <div>
+          <h3>${ac.name}</h3>
+          <p>${ac.type}</p>
+        </div>
+      `;
+      card.onclick = () => window.location.href = ac.page;
+      catalog.appendChild(card);
+    });
+  </script>
+</body>
+</html>

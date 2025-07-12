@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C-130 Hercules - AeroExplorer</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1597005031743-6cf6a3eec7ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center / cover;
+      color: #f0f0f0;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00ff7f;
+      text-shadow: 2px 2px 4px #000;
+    }
+    h2 {
+      font-size: 1.8rem;
+      color: #00bfff;
+      border-bottom: 1px solid #00bfff;
+      padding-bottom: 0.3rem;
+    }
+    p {
+      background: rgba(0,0,0,0.5);
+      padding: 0.8rem;
+      border-radius: 8px;
+      line-height: 1.6;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      margin: 1rem auto;
+      border: 3px solid #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    img:hover {
+      transform: scale(1.03);
+    }
+    a {
+      display: block;
+      text-align: center;
+      color: #ffd700;
+      margin-top: 2rem;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>C-130 Hercules</h1>
+  <img src="https://media.defense.gov/2016/Jun/22/2001931574/2000/2000/0/160617-F-QN515-024.JPG" alt="C-130 Hercules" onclick="alert('C-130: The workhorse of the skies!')">
+  
+  <h2>Overview</h2>
+  <p>The C-130 Hercules is a military transport aircraft that has served nations globally for over 60 years. It is renowned for its ruggedness and ability to operate in harsh environments, from short runways to unprepared airstrips.</p>
+
+  <h2>Specifications</h2>
+  <p>🛫 Manufacturer: Lockheed Martin<br>
+     ⚡ Max Speed: 366 mph<br>
+     🌍 Range: 2,360 miles<br>
+     👨‍✈️ Crew: 4-5<br>
+     📦 Cargo Capacity: 45,000 lbs</p>
+
+  <h2>Mission Steps</h2>
+  <p>Load cargo → Pre-flight inspection → Takeoff → Deliver cargo → Return to base</p>
+
+  <a href="catalog.html">← Back to Catalog</a>
+
+  <script>
+    document.addEventListener('keydown', e => {
+      if (e.key.toLowerCase() === 'c') window.location.href = 'catalog.html';
+    });
+  </script>
+</body>
+</html>

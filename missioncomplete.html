@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mission Complete - AeroExplorer</title>
+  <style>
+    body {
+      margin: 0; padding: 2rem;
+      font-family: Arial, sans-serif;
+      background: url('https://th.bing.com/th/id/OIP.hte4oM8OkzzA1c5o73eHwgHaEK?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3') no-repeat center / cover;
+      color: #fff;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #00ffff;
+      text-shadow: 2px 2px 6px #000;
+      margin-top: 3rem;
+    }
+    h2 {
+      font-size: 3rem;
+      color: whitesmoke;
+      text-shadow: 2px 2px 6px #000;
+      margin-top: 8rem;
+    }
+    p {
+      font-size: 1.4rem;
+      background: rgba(0,0,0,0.5);
+      padding: 1rem;
+      border-radius: 10px;
+      display: inline-block;
+      margin: 1rem auto;
+    }
+    .emoji {
+      font-size: 4rem;
+      animation: fly 2s infinite alternate;
+    }
+    @keyframes fly {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+    .btn {
+      display: inline-block;
+      margin: 1rem;
+      padding: 0.8rem 1.5rem;
+      background: #4caf50;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+    }
+    .btn:hover { background: #45a049; }
+  </style>
+</head>
+<body>
+  <h1>🌟 Mission Complete 🌟</h1>
+  <div class="emoji">✈️</div>
+  <p>Thank you for exploring the AeroExplorer skies. Your virtual mission was a success!<br> Ready to take off again or test your knowledge?</p>
+  
+  <a href="catalog.html" class="btn">Fly Again</a>
+  <a href="quiz.html" class="btn">Test Knowledge</a>
+<h2>Thankyou</h1>
+  <script>
+    document.addEventListener('keydown', e => {
+      if (e.key.toLowerCase() === 'f') {
+        window.location.href = 'catalog.html';
+      }
+      if (e.key.toLowerCase() === 'q') {
+        window.location.href = 'quiz.html';
+      }
+    });
+  </script>
+</body>
+</html>

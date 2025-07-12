@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AH-64 Apache - AeroExplorer</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1631636300137-99ea09153e67?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center / cover;
+      color: #f0f0f0;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #ff4500;
+      text-shadow: 2px 2px 4px #000;
+    }
+    h2 {
+      font-size: 1.8rem;
+      color: #00ced1;
+      border-bottom: 1px solid #00ced1;
+      padding-bottom: 0.3rem;
+    }
+    p {
+      background: rgba(0,0,0,0.5);
+      padding: 0.8rem;
+      border-radius: 8px;
+      line-height: 1.6;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      margin: 1rem auto;
+      border: 3px solid #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    img:hover {
+      transform: scale(1.03);
+    }
+    a {
+      display: block;
+      text-align: center;
+      color: #ffd700;
+      margin-top: 2rem;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>AH-64 Apache</h1>
+  <img src="https://www.planephotos.net/photos/22782_Boeing-AH-64D-Apache-Longbow_07-07037.jpg" alt="AH-64 Apache" onclick="alert('AH-64 Apache: Dominator of the battlefield!')">
+  
+  <h2>Overview</h2>
+  <p>The AH-64 Apache is the US Army's primary attack helicopter, designed to excel in front-line combat. Equipped with advanced avionics, it delivers powerful firepower in any environment.</p>
+
+  <h2>Specifications</h2>
+  <p>🛫 Manufacturer: Boeing<br>
+     ⚡ Max Speed: 182 mph<br>
+     🌍 Range: 300 miles<br>
+     👨‍✈️ Crew: 2<br>
+     🔫 Armament: 30mm chain gun, Hellfire missiles, rockets</p>
+
+  <h2>Mission Steps</h2>
+  <p>Arm weapons → Mission briefing → Takeoff → Attack target → Return to base</p>
+
+  <a href="catalog.html">← Back to Catalog</a>
+
+  <script>
+    document.addEventListener('keydown', e => {
+      if (e.key.toLowerCase() === 'c') window.location.href = 'catalog.html';
+    });
+  </script>
+</body>
+</html>

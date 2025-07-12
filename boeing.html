@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Boeing 747 - AeroExplorer</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: Arial, sans-serif;
+      color: #f0f0f0;
+      background: url('https://images.unsplash.com/photo-1605889093754-016e4dd53c48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center / cover;
+    }
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      color:#00bfff;
+      text-shadow: 2px 2px 4px #000;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 1.5rem;
+      color: #00bfff;
+      border-bottom: 1px solid #00bfff;
+      padding-bottom: 0.3rem;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      background: rgba(0,0,0,0.5);
+      padding: 0.8rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      margin: 1rem auto;
+      cursor: pointer;
+      border: 3px solid #fff;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    img:hover {
+      transform: scale(1.02);
+    }
+    a {
+      color: #ffd700;
+      display: block;
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    #counter {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-top: 1rem;
+      color: #ffd700;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Boeing 747 - The Queen of the Skies</h1>
+
+  <img id="aircraftImage" src="https://static1.simpleflyingimages.com/wordpress/wp-content/uploads/2024/06/korean-air-747-8-landing-shutterstock_698985949-1.jpg" alt="Boeing 747">
+
+  <h2>Overview</h2>
+  <p>
+    The Boeing 747, known as the "Queen of the Skies", is one of the most iconic aircraft in aviation history.
+    First introduced in 1970, it revolutionized air travel by making long-haul flights accessible to the masses.
+    The 747 is recognized worldwide for its distinctive hump on the upper deck.
+  </p>
+
+  <h2>Specifications</h2>
+  <p>
+    🛩 <strong>Manufacturer:</strong> Boeing<br>
+    🛩 <strong>Type:</strong> Passenger wide-body jet<br>
+    🛩 <strong>Max speed:</strong> 614 mph (988 km/h)<br>
+    🛩 <strong>Range:</strong> 8,000 miles (12,875 km)<br>
+    🛩 <strong>Seating capacity:</strong> ~416 (typical three-class), up to 660 (all economy)<br>
+    🛩 <strong>Wingspan:</strong> 224 ft 7 in (68.4 m)<br>
+    🛩 <strong>First flight:</strong> February 9, 1969
+  </p>
+
+  <h2>Boarding Process</h2>
+  <p>
+    ✅ Check-in (online or at counter)<br>
+    ✅ Security screening<br>
+    ✅ Proceed to boarding gate (typically via jet bridge)<br>
+    ✅ Upper deck passengers may board through a dedicated jet bridge<br>
+    ✅ Locate assigned seat and stow luggage<br>
+    ✅ Fasten seatbelt and prepare for take-off
+  </p>
+
+  <h2>Fun Facts</h2>
+  <p>
+    ✈ Over <span id="factCount">0</span> Boeing 747s have been built.<br>
+    ✈ The 747 was the first airplane dubbed a "Jumbo Jet".<br>
+    ✈ Its upper deck was initially designed as a lounge or additional seating.<br>
+    ✈ Some 747s are converted into cargo freighters and even airborne command centers!
+  </p>
+
+  <a id="backLink" href="catalog.html">← Back to Catalog</a>
+  <div id="counter"></div>
+
+  <script>
+    let factEl = document.getElementById("factCount");
+    let count = 0, target = 1574;
+    let interval = setInterval(() => {
+      if (count < target) {
+        count += Math.ceil((target - count)/10);
+        factEl.textContent = count;
+      } else {
+        factEl.textContent = target;
+        clearInterval(interval);
+      }
+    }, 100);
+
+    document.getElementById("aircraftImage").onclick = () => alert("Zoom in to admire the Boeing 747!");
+    document.getElementById("backLink").onclick = (e) => { e.preventDefault(); window.location.href = "catalog.html"; };
+    document.addEventListener("keydown", e => { if (e.key.toLowerCase() === 'c') window.location.href = "catalog.html"; });
+    document.getElementById("counter").textContent = "Press 'C' to go back.";
+  </script>
+
+</body>
+</html>

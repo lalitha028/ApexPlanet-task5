@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AeroExplorer Quiz</title>
+  <style>
+    body {
+      margin: 0; padding: 2rem; font-family: Arial, sans-serif;
+      
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    h1 {
+      width: 100%;
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00bfff;
+      text-shadow: 2px 2px 4px #000;
+    }
+    .quiz-box {
+      max-width: 800px;
+      background: rgba(0,0,0,0.6);
+      padding: 2rem;
+      border-radius: 10px;
+    }
+    .question { margin: 1rem 0; }
+    button {
+      width: 100%;
+      padding: 0.7rem;
+      background: #4caf50;
+      border: none;
+      color: #fff;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    button:hover { background: #45a049; }
+    .result { margin-top: 1rem; font-size: 1.3rem; }
+    label { display: block; margin: 0.5rem 0; }
+    .next-btn {
+      display: none;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .next-btn a {
+      background: #2196f3;
+      color: #fff;
+      padding: 0.7rem 1.5rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+    }
+    .next-btn a:hover {
+      background: #1976d2;
+    }
+
+    .funny-plane {
+      width: 400px;
+      animation: floatplane 3s infinite alternate ease-in-out;
+    }
+
+    @keyframes floatplane {
+      from { transform: translateY(0) rotate(-5deg); }
+      to { transform: translateY(20px) rotate(5deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>AeroExplorer Quiz</h1>
+
+  <img class="funny-plane" src="https://img.freepik.com/premium-vector/cartoon-drawing-girl-holding-blue-airplane-pointing-camera_1087929-6121.jpg" alt="Funny plane">
+
+  <div class="quiz-box">
+    <div class="question">
+      <strong>1️⃣ What is the max speed of the F-16?</strong>
+      <label><input type="radio" name="q1" value="A"> 900 mph</label>
+      <label><input type="radio" name="q1" value="B"> 1500 mph</label>
+      <label><input type="radio" name="q1" value="C"> 700 mph</label>
+    </div>
+
+    <div class="question">
+      <strong>2️⃣ The C-130 Hercules is famous for?</strong>
+      <label><input type="radio" name="q2" value="A"> Speed</label>
+      <label><input type="radio" name="q2" value="B"> Cargo transport</label>
+      <label><input type="radio" name="q2" value="C"> Stealth missions</label>
+    </div>
+
+    <div class="question">
+      <strong>3️⃣ The AH-64 Apache's main weapon is?</strong>
+      <label><input type="radio" name="q3" value="A"> 30mm chain gun</label>
+      <label><input type="radio" name="q3" value="B"> Torpedoes</label>
+      <label><input type="radio" name="q3" value="C"> Laser blasters</label>
+    </div>
+
+    <button onclick="checkQuiz()">Submit Answers</button>
+    <div class="result" id="resultBox"></div>
+    <div class="next-btn" id="nextBtn">
+      <a href="missioncomplete.html">Next → Mission Complete</a>
+    </div>
+  </div>
+
+  <script>
+    function checkQuiz() {
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      const q3 = document.querySelector('input[name="q3"]:checked');
+
+      if (!q1 || !q2 || !q3) {
+        document.getElementById("resultBox").innerHTML = "❗ Please answer all questions!";
+        return;
+      }
+
+      let score = 0;
+      if (q1.value === 'B') score++;
+      if (q2.value === 'B') score++;
+      if (q3.value === 'A') score++;
+
+      let feedback = "Nice try!";
+      if (score === 3) feedback = "🌟 Perfect score! You're an aviation ace!";
+      else if (score === 2) feedback = "👍 Good job!";
+      else feedback = "💡 Brush up on your aircraft facts!";
+
+      document.getElementById("resultBox").innerHTML = `You scored ${score}/3. ${feedback}`;
+      document.getElementById("nextBtn").style.display = 'block';
+    }
+  </script>
+</body>
+</html>
